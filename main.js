@@ -40,7 +40,7 @@
   document.querySelectorAll('form[name="webinar"]').forEach(function (form) {
     var err = form.querySelector('.form__error');
     var btn = form.querySelector('button[type="submit"]');
-    var label = btn.textContent;
+    var label = btn.innerHTML;
 
     form.addEventListener('input', function (e) {
       if (e.target.getAttribute('aria-invalid') === 'true' || e.target.type === 'checkbox') setInvalid(e.target, false);
@@ -80,7 +80,7 @@
         location.href = '/thank-you.html';
       }).catch(function () {
         btn.disabled = false;
-        btn.textContent = label;
+        btn.innerHTML = label;
         err.textContent = 'ההרשמה לא נשלחה, כנראה בגלל בעיית חיבור. נסו שוב בעוד רגע.';
       });
     });
