@@ -77,7 +77,7 @@
       Promise.all(jobs).then(function () {
         try { sessionStorage.setItem('webinar-name', data.name.split(' ')[0]); } catch (x) {}
         if (window.fbq) window.fbq('track', 'Lead');
-        location.href = '/thank-you.html';
+        location.href = 'thank-you.html';
       }).catch(function () {
         btn.disabled = false;
         btn.innerHTML = label;
